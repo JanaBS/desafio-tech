@@ -1,5 +1,6 @@
 const fs = require('fs')
 let dia = new Date()
+const path = 'c:/funcionarios/log.txt'
 
 module.exports = app => {
     const { existsOrError, notExistsOrError } = app.api.validator
@@ -25,7 +26,7 @@ module.exports = app => {
         if (employee.id) {
 
             const data = `${dia} - Alteração no usuário:\nNome: ${employee.nome}\nIdade: ${employee.idade}\nCargo: ${employee.cargo}\n\n`
-            fs.appendFileSync('c:/funcionarios/log.txt', data, (err) => {
+            fs.appendFileSync(path, data, (err) => {
                 if (err) throw err;
             });
             app.db('employee')
@@ -35,7 +36,7 @@ module.exports = app => {
                 .catch(err => res.status(500).send(err))
         } else {
             const data = `${dia} - Criação usuário:\nNome: ${employee.nome}\nIdade: ${employee.idade}\nCargo: ${employee.cargo}\n\n`
-            fs.appendFileSync('c:/funcionarios/log.txt', data, (err) => {
+            fs.appendFileSync(path, data, (err) => {
                 if (err) throw err;
             });
             app.db('employee')
@@ -74,7 +75,7 @@ module.exports = app => {
     const remove = async (req, res) => {
             
         const data = `${dia} - Exclusão de usuário\n\n`
-            fs.appendFileSync('c:/funcionarios/log.txt', data, (err) => {
+            fs.appendFileSync(path, data, (err) => {
                 if (err) throw err;
             });
         await app.db('employee')
