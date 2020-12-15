@@ -133,9 +133,7 @@ export default {
         .then(() => {
           this.$toasted.global.defaultSuccess();
           this.hideModal('remove')
-          this.$store.commit('loadEmployees')
-          // this.getEmployees();
-        })
+          this.$store.commit('loadEmployees')        })
         .catch(showError);
     },
 

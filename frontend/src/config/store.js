@@ -22,7 +22,7 @@ export default new Vuex.Store({
         getBy(state, params) {
             function filterName (result) {
                 if(params.nome){
-                    const FilterName = result.filter((elemento) => elemento.nome === params.nome)
+                    const FilterName = result.filter((elemento) => elemento.nome.toLowerCase() === params.nome.toLowerCase())
                     return FilterName
                 } else {
                   return result
@@ -38,14 +38,13 @@ export default new Vuex.Store({
             }
             function filterOffice (result) {
                 if(params.cargo){
-                    const filterOffice = result.filter((elemento) => elemento.cargo === params.cargo)
+                    const filterOffice = result.filter((elemento) => elemento.cargo.toLowerCase() === params.cargo.toLowerCase())
                     return filterOffice
                 } else {
                   return result
                 }
             }
             const url = `${baseApiUrl}/filter`;
-            console.log(params)
             axios.get(url, params)
             .then((res) => filterName(res.data.data))
             .then((res) => filterAge(res))
