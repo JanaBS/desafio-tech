@@ -1,6 +1,6 @@
 const fs = require('fs')
 let dia = new Date()
-const path = '/Users/andrevitorino/Desktop/log.txt'
+const path = 'c:/funcionarios/log.txt'
 
 module.exports = app => {
     const { existsOrError, notExistsOrError } = app.api.validator
