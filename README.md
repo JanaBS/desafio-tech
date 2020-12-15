@@ -1,5 +1,11 @@
 # desafio-tech
 
+API e interface de consulta a funcionário
+DataBase PostgreSQL + knx.js
+BackEnd NodeJs
+FrontEnd VueJs
+
+
 Dependencias:
 Node JS - https://nodejs.org/en/download/
 
