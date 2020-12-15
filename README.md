@@ -15,13 +15,15 @@ Instalação via NPM:
 Vue Cli - $ npm install -g @vue/cli
 
 1 - criar banco de dados:
+
 open terminal
 
-psql -U postgres
+psql -U postgres (caso tenha inserido senha na instalação do postgres, ela pode ser soliictada nessa etapa)
 
 "CREATE DATABASE employees;"
 
 2 - baixar as dependencias backend e iniciar servidor:
+
 acessar pelo terminal a pasta desafio-tech-main/backend
 
 npm i
